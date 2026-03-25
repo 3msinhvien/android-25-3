@@ -10,7 +10,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bt_nhom_25_3.data.AppDatabase;
+import com.example.bt_nhom_25_3.ui.CategoryActivity;
 import com.example.bt_nhom_25_3.ui.LoginActivity;
+import com.example.bt_nhom_25_3.ui.ProductActivity;
 import com.example.bt_nhom_25_3.utils.SessionManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,11 +49,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnProducts.setOnClickListener(v -> {
-            Toast.makeText(this, "Sẽ chuyển đến Danh sách Sản phẩm", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, ProductActivity.class));
         });
 
         btnCategories.setOnClickListener(v -> {
-            Toast.makeText(this, "Sẽ chuyển đến Danh mục", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, CategoryActivity.class));
         });
     }
 
