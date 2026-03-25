@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import com.example.bt_nhom_25_3.MainActivity;
 import com.example.bt_nhom_25_3.R;
 import com.example.bt_nhom_25_3.data.AppDatabase;
 import com.example.bt_nhom_25_3.data.entity.CartItem;
@@ -52,7 +54,25 @@ public class CartActivity extends AppCompatActivity {
 
         loadCart();
 
-        btnCheckout.setOnClickListener(v -> processCheckout());
+        btnCheckout.setOnClickListener(v -> showCheckoutConfirmDialog());
+    }
+
+    private void showCheckoutConfirmDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Xác nhận thanh toán")
+                .setMessage("Bạn có chắc muốn thanh toán đơn hàng này không?")
+                .setPositiveButton("Đồng ý", (dialog, which) -> {
+                    processCheckout();
+                })
+                .setNegativeButton("Không", (dialog, which) -> {
+                    dialog.dismiss();
+                    // Quay về màn hình danh sách sản phẩm (Home)
+                    Intent intent = new Intent(CartActivity.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
+                })
+                .show();
     }
 
     private void loadCart() {
