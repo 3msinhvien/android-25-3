@@ -18,4 +18,7 @@ public interface ProductDao {
 
     @Query("SELECT * FROM products WHERE categoryId = :categoryId")
     List<Product> getProductsByCategory(int categoryId);
+
+    @Query("SELECT * FROM products WHERE id = :id")
+    Product getProductById(int id);
 }

@@ -15,4 +15,10 @@ public interface OrderDetailDao {
 
     @Query("SELECT * FROM order_details WHERE orderId = :orderId")
     List<OrderDetail> getOrderDetails(int orderId);
+
+    @androidx.room.Update
+    void update(OrderDetail orderDetail);
+
+    @Query("SELECT * FROM order_details WHERE orderId = :orderId AND productId = :productId LIMIT 1")
+    OrderDetail getOrderDetail(int orderId, int productId);
 }

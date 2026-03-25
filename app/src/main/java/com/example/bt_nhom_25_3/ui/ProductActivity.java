@@ -49,16 +49,9 @@ public class ProductActivity extends AppCompatActivity {
 
         productList = new ArrayList<>();
         adapter = new ProductAdapter(productList, product -> {
-            // Yêu cầu: khi chọn sản phẩm: kiểm tra đăng nhập -> sang Login nếu chưa
-            // Tuy nhiên user "Không làm phần checkout hoặc tạo hóa đơn". 
-            // Chỉ cần demo kiểm tra đăng nhập.
-            if (!sessionManager.isLoggedIn()) {
-                Toast.makeText(ProductActivity.this, "Vui lòng đăng nhập để tạo hóa đơn", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ProductActivity.this, LoginActivity.class));
-            } else {
-                Toast.makeText(ProductActivity.this, "Sẵn sàng thêm vào hóa đơn: " + product.name, Toast.LENGTH_SHORT).show();
-                // Phần tạo Order/OrderDetail thuộc nhiệm vụ thành viên khác
-            }
+            Intent detailIntent = new Intent(ProductActivity.this, ProductDetailActivity.class);
+            detailIntent.putExtra("PRODUCT_ID", product.id);
+            startActivity(detailIntent);
         });
         rvProducts.setAdapter(adapter);
 

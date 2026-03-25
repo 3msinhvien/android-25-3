@@ -9,6 +9,8 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.bt_nhom_25_3.data.dao.CategoryDao;
+import com.example.bt_nhom_25_3.data.dao.OrderDao;
+import com.example.bt_nhom_25_3.data.dao.OrderDetailDao;
 import com.example.bt_nhom_25_3.data.dao.ProductDao;
 import com.example.bt_nhom_25_3.data.dao.UserDao;
 import com.example.bt_nhom_25_3.data.entity.Category;
@@ -26,6 +28,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
     public abstract CategoryDao categoryDao();
     public abstract ProductDao productDao();
+    public abstract OrderDao orderDao();
+    public abstract OrderDetailDao orderDetailDao();
 
     private static volatile AppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
