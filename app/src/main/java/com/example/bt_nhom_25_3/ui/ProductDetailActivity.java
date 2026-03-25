@@ -113,6 +113,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
             runOnUiThread(() -> {
                 Toast.makeText(ProductDetailActivity.this, "Đã thêm " + currentProduct.name + " vào hóa đơn thành công!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(ProductDetailActivity.this, CartActivity.class));
             });
         });
     }

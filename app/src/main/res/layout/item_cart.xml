@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="#F5F5F5">
+
+    <TextView android:id="@+id/tvCartProductName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="#000000"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="4dp">
+        <TextView android:id="@+id/tvCartQuantity" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SL: 1"/>
+        <TextView android:id="@+id/tvCartPrice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Đơn giá: 10,000 VNĐ"/>
+    </LinearLayout>
+    <TextView android:id="@+id/tvCartSubTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#D32F2F" android:layout_marginTop="4dp" android:textStyle="bold"/>
+</LinearLayout>

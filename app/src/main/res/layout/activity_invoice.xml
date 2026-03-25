@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="24dp" android:gravity="center">
+
+    <ImageView android:layout_width="100dp" android:layout_height="100dp" android:src="@android:drawable/ic_dialog_info" android:layout_marginBottom="16dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Thanh toán Hóa Đơn thành công!" android:textSize="22sp" android:textStyle="bold" android:textColor="#4CAF50" android:textAlignment="center"/>
+
+    <TextView android:id="@+id/tvInvoiceOrderId" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Mã đơn hàng: #" android:textSize="18sp" android:layout_marginTop="16dp"/>
+
+    <TextView android:id="@+id/tvInvoiceTotal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Tổng tiền: " android:textSize="20sp" android:textColor="#D32F2F" android:textStyle="bold" android:layout_marginTop="8dp"/>
+
+    <Button android:id="@+id/btnBackHome" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Quay về Trang chủ \n(Tiếp tục mua hàng)" android:layout_marginTop="32dp" android:padding="12dp"/>
+</LinearLayout>
